@@ -37,8 +37,15 @@ To run Zen: Real-Time Yoga Pose Estimation System, follow these steps:
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/Divyaanna/Real-Time-Yoga-Pose-Estimation-System-with-Machine-Learning.git
+   cd Real-Time-Yoga-Pose-Estimation-System-with-Machine-Learning
+   pip install -r requirements.txt
 
-   
+2. **Run the Application:**
+   ```bash
+    python app.py
+
+3. **Open Your Browser:**
+Visit http://localhost:5000 in your web browser.
    
 ## Team
 
