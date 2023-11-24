@@ -28,7 +28,7 @@ for i in range(0, 33):
     columns.append(f"z{i}")
     columns.append(f"v{i}")
 
-with open("gbmodel_30.pkl", "rb") as f:
+with open("rfmodel_32.pkl", "rb") as f:
     model = pickle.load(f)
 
 cap = cv2.VideoCapture(0)
