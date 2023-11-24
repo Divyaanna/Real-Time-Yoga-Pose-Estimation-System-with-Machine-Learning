@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen - Yoga Pose Estimator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylish.css') }}">
+        
+</head>
+<body>
+    <!-- Add a wrapper to contain both the content and the sidebar -->
+    <div class="wrapper">
+        <div class="sidebar">
+            <button class="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div class="settings">
+                <button class="toggle-settings" onclick="toggleSettings()"> 
+                <i class="fas fa-cogs"></i> Settings
+                </button>       
+                <div class="accessibility">
+                    <label for="voiceToggle">Voice Guidance:</label>
+                    <input type="checkbox" id="voiceToggle">
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <h1><i class="fas fa-spa"></i> Zen - Your Pose Estimator</h1>
+            <button id="startButton" onclick="startCamera()"><i class="fas fa-video"></i> Start Camera</button>
+            <button id="backButton" onclick="back()" class="topleft"><i class="fas fa-arrow-left"></i> Go Back</button>
+            <div id="loading_indicator"><i class="fas fa-spinner fa-spin"></i> Initializing camera...</div>
+            <img id="video_feed" src="{{ url_for('video_feed') }}" alt="Yoga Pose Recognition">
+            <div id="result" class="result-container">
+                <p id="poseClass" class="result-text"><i class="fas fa-spa"></i> <strong>Current Pose:</strong> {{ body_language_class }}</p>
+                <p id="poseProb" class="result-text"><i class="fas fa-chart-pie"></i> <strong>Probability:</strong> {{ body_language_prob }}</p>
+            </div>
+        </div>
+</div>       
+
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/dynamicbox.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/voiceguide.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  
+</body>
+</html>
